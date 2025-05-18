@@ -1,0 +1,10 @@
+﻿
+https://www.youtube.com/watch?v=KSOVi-5HYw4&list=PPSV
+
+Introducción a Minimal APIs con ASP.NET Core 9 - SQL Server, Procedimientos Almacenados, y más!
+
+Felipe Gavilan
+
+Paquetes instalados:
+Dapper
+Microsoft.Data.SqlClient

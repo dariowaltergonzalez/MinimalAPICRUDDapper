@@ -1,0 +1,36 @@
+@MinimalAPICRUDDapper_HostAddress = http://localhost:5021
+
+GET {{MinimalAPICRUDDapper_HostAddress}}/personas/
+Accept: application/json
+
+###
+
+GET {{MinimalAPICRUDDapper_HostAddress}}/personas/2
+Accept: application/json
+
+###
+
+POST {{MinimalAPICRUDDapper_HostAddress}}/personas/
+Content-Type: application/json
+
+{
+  "nombre": "Juan"
+}
+
+###
+
+PUT {{MinimalAPICRUDDapper_HostAddress}}/personas/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "nombre": "Marcos Antonio Gonzalez"
+}
+
+###
+
+
+DELETE {{MinimalAPICRUDDapper_HostAddress}}/personas/3
+Accept: application/json
+
+###
