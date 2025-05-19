@@ -3,8 +3,96 @@ https://www.youtube.com/watch?v=KSOVi-5HYw4&list=PPSV
 
 Introducción a Minimal APIs con ASP.NET Core 9 - SQL Server, Procedimientos Almacenados, y más!
 
+
 Felipe Gavilan
+
 
 Paquetes instalados:
 Dapper
 Microsoft.Data.SqlClient
+
+
+
+SQL Server Procedures:
+ALTER PROCEDURE [dbo].[Personas_Actualizar] 
+	-- Add the parameters for the stored procedure here
+	@id INT,
+	@nombre nvarchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	UPDATE Personas SET Nombre= @nombre WHERE Id = @id
+END
+
+ALTER PROCEDURE [dbo].[Personas_Borrar] 
+	-- Add the parameters for the stored procedure here
+	@id int
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	DELETE Personas WHERE ID = @id
+END
+
+ALTER PROCEDURE [dbo].[Personas_Crear] 
+	-- Add the parameters for the stored procedure here
+	@nombre nvarchar(200)	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	INSERT INTO Personas(Nombre) VALUES(@nombre)
+
+	SELECT SCOPE_IDENTITY();
+END
+
+ALTER PROCEDURE [dbo].[Personas_ExistePorId]
+	-- Add the parameters for the stored procedure here
+	@id int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	IF EXISTS(SELECT 1 FROM PERSONAS WHERE ID =@id)
+		SELECT 1
+	ELSE
+		SELECT 0
+END
+
+ALTER PROCEDURE [dbo].[Personas_ObtenerPorId]
+	@id int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * FROM Personas WHERE Id = @id
+END
+
+ALTER PROCEDURE [dbo].[Personas_ObtenerTodos] 
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * FROM Personas
+END
