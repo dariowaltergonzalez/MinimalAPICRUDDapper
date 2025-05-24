@@ -12,6 +12,14 @@ Dapper
 Microsoft.Data.SqlClient
 
 
+PC
+"ConnectionStrings": {
+    "DefaultConnection": "Server=banghomax\\sqlexpress;DataBase=MinimalAPIDapperDB;User ID=sa;Password=avestruz;TrustServerCertificate=True;"
+  
+NOTEBOOK
+"ConnectionStrings": {
+    "DefaultConnection": "Server=banghomax2\\sqlexpress;DataBase=MinimalAPIDapperDB;User ID=sa;Password=banghomax;TrustServerCertificate=True;"
+
 
 SQL Server Procedures:
 ALTER PROCEDURE [dbo].[Personas_Actualizar] 

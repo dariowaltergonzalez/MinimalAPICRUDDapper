@@ -14,7 +14,7 @@ POST {{MinimalAPICRUDDapper_HostAddress}}/personas/
 Content-Type: application/json
 
 {
-  "nombre": "Juan"
+  "nombre": "Daniel"
 }
 
 ###
